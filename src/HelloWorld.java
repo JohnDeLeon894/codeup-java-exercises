@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class HelloWorld {
 
 
@@ -68,24 +70,22 @@ public class HelloWorld {
 //        Rewrite the following expressions using the relevant shorthand assignment operators:
 
 
-        x = 4;
-        x += 5;
-
-        x = 3;
-        int y = 4;
-        y *= x;
-        System.out.println(x +" " + y);
-        x = 10;
-        y = 2;
-        x /= y;
-        y -= x;
-        System.out.println(x +" " + y);
+//        x = 4;
+//        x += 5;
+//
+//        x = 3;
+//        int y = 4;
+//        y *= x;
+//        System.out.println(x +" " + y);
+//        x = 10;
+//        y = 2;
+//        x /= y;
+//        y -= x;
+//        System.out.println(x +" " + y);
 
     }
 
 
+
+
 }
-
-
-
-
