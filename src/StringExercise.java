@@ -46,17 +46,29 @@ public class StringExercise {
         Scanner wantContinue = new Scanner(System.in);
         // checks to see if this is the first run
         boolean firstRun = true;
+
+        System.out.println(x);
+        if (x<1 || x>10){
+            System.out.println("This is not a valid number. Goodbye. ");
+            return;
+        }
         // loop to count output
         for(int i = 1; i <= x; i++){
             if(firstRun){
                 factNum = " 1";
                 firstRun = false;
+                System.out.printf(returnFormat,i, factNum,sum);
             }else {
-                factNum += (" x " + i);
+                factNum += (" x " + i );
+                sum *=i;
+                System.out.printf(returnFormat,i, factNum,sum);
             }
-            sum *=i;
+            //sum *=i;
+            System.out.println("");
+           // System.out.printf(returnFormat,factNum, factNum,sum);
+
         }
-        System.out.printf(returnFormat,x, factNum,sum);
+        //System.out.printf(returnFormat,x, factNum,sum);
         System.out.println("\nWould you like to run it again?");
         usrCont = wantContinue.nextLine();
         if(usrCont.contains("yes")||usrCont.contains("yeah")||usrCont.contains("ok")||usrCont.contains("sure")||
@@ -68,6 +80,21 @@ public class StringExercise {
             x = xFactor.nextInt();
             findFactors(x);
         }
+
+
+    }
+
+    public static void diceRoll(int x){
+        //x is the number of sides the dice will have.
+        /*Create an application that simulates dice rolling.
+
+            Ask the user to enter the number of sides for a pair of dice.
+            Prompt the user to roll the dice.
+            "Roll" two n-sided dice, display the results of each, and then ask the user if he/she wants to roll the dice again.
+            Use static methods to implement the method(s) that generate the random numbers.
+            Use the .random method of the java.lang.Math class to generate random numbers.
+        */
+
 
 
     }
