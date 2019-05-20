@@ -67,6 +67,7 @@ public class Input {
         boolean valid = false;
         if(input < min || input > max){
             System.out.println("Input is not a valid input");
+            getInt(min, max);
             return 0;
         }
         System.out.printf("Selected valid number = %s\n", input);
@@ -105,19 +106,10 @@ public class Input {
     }
     public boolean yesNo(boolean prompt){
         System.out.println("Please input an affirmation");
-        String input = this.scanner.nextLine();
-        System.out.printf("User input = %s", input);
+        return yesNo();
+        //System.out.printf("User input = %s", input);
 
-        input = input.toLowerCase();
-        if(input.contains("yes")||input.contains("yeah")||input.contains("ok")||input.contains("sure")||
-                input.contains("why not")||input.contains("for sure")||input.contains("im " +
-                "down")||input.contains("definitely")||input.contains("absolutely")||
-                input.contains("indeed")||input.contains("of course")|| input.contains("y")){
-            System.out.println(true);
-            return true;
-        }
-        System.out.println(false);
-        return false;
+
     }
     public int getInt(int min, int max, boolean prompt){
 //        The getInt(int min, int max) method should keep prompting the user for input until they give an
