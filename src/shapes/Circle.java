@@ -1,5 +1,7 @@
 package shapes;
 
+import org.jetbrains.annotations.Contract;
+
 public class Circle {
     /*Circle class
 
@@ -42,19 +44,17 @@ Bonus
     }
 
     public double getArea() {
-
+//      area = pi x (radius ^ 2)
         double x = Math.pow(this.radius, 2);
         double PI = Math.PI;
-        double area = x * PI;
-        return area;
+        return  x * PI;
     }
 
     public double getCircumference() {
         //circumference = 2 x pi x radius
         double x = this.radius;
         double PIsqr = Math.PI * 2;
-        double circumference = x * PIsqr;
-        return circumference;
+        return x * PIsqr;
     }
 
 }
