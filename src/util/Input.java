@@ -91,26 +91,47 @@ public class Input {
 
 
     public int getInt(){
-        System.out.println("Please enter any Integer");
-        int input = this.scanner.nextInt();
-        return input;
+
+        try {
+            System.out.println("Please enter any whole number.");
+            int input = this.scanner.nextInt();
+            return input;
+        }catch (Exception e){
+            String input = this.scanner.nextLine();
+            System.out.println("Input is not valid, please enter a valid number.");
+            return getInt();
+        }
     }
     public double getDouble(double min, double max){
-        System.out.printf("Please input a number between %s and %s \n", min, max);
-        double input = this.scanner.nextDouble();
-        if(input < min || input > max){
-            System.out.println("Input is not a valid input");
-            return 0;
+        try {
+            System.out.printf("Please input a number between %s and %s \n", min, max);
+            double input = this.scanner.nextDouble();
+            if (input < min || input > max) {
+                System.out.println("Input is not a valid input. Please enter a valid number.");
+                return 0;
+            }else{
+                return input;
+            }
+        }catch (Exception e){
+            String input = this.scanner.nextLine();
+            System.out.println("Input is not a valid input. Please enter a valid number.");
+            return getDouble(min, max);
         }
 
         System.out.printf("Selected floating point number = %s\n", input);
         return input;
     }
     public double getDouble(){
-        System.out.println("Please enter any floating point number:");
-        double input = this.scanner.nextDouble();
-        System.out.printf("Selected number = %s\n", input);
-        return input;
+        try {
+            System.out.println("Please enter any floating point number:");
+            double input = this.scanner.nextDouble();
+            System.out.printf("Selected number = %s\n", input);
+            return input;
+        }catch (Exception e){
+            String input = this.scanner.nextLine();
+            System.out.println("Input is not a valid input. Please enter a valid number.");
+            return getDouble();
+        }
     }
 
     // methods with optional prompt info
