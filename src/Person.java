@@ -32,7 +32,7 @@ public class Person {
     }
     // prints a message to the console using the person's name
     public void sayHello(){
-        System.out.printf("%s says \"Hello!\"", this.getName());
+        System.out.printf("%s says \"Hello!\" %n", this.getName());
     }
 
     public Person (String name){

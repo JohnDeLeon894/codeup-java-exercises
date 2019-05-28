@@ -30,26 +30,45 @@ dedicated-photon
 
     }
 
-    private static String nameGenerator(int num ){
-      int adjCount = adjectives.length;
-        System.out.println(adjCount);
-      int nameCount = names.length;
-        System.out.println(nameCount);
-      int nounCount = nouns.length;
-        System.out.println(nounCount);
-      for (int i=0; i< num ; i++){
-          int rando = (int) (Math.random()*adjCount);
-          String adj = adjectives[rando];
-          rando = (int) (Math.random()*nounCount);
-          String noun = nouns[rando];
-          rando = (int) (Math.random()*nameCount);
-          String name = names[rando];
-          String genName =
-                  "You shall now and forever be known as: "+ name + " the " + adj + "-" + noun;
-          System.out.println(genName);
+    private static String nameGenerator(int count ){
+        int adjCount = adjectives.length;
+//        System.out.println(adjCount);
+        int nameCount = names.length;
+//        System.out.println(nameCount);
+        int nounCount = nouns.length;
+//        System.out.println(nounCount);
+
+
+        for (int i=0; i< count ; i++){
+        nameGenerator();
       }
-        return "Process finished";
+        return "process done";
     };
+    public static String nameGenerator(){
+        int adjCount = adjectives.length;
+        //System.out.println(adjCount);
+        int nameCount = names.length;
+       // System.out.println(nameCount);
+        int nounCount = nouns.length;
+       // System.out.println(nounCount);
+
+        String adj;
+        String noun;
+        String name;
+       // for (int i=0; i< num ; i++){
+        int rando = (int) (Math.random()*adjCount);
+        adj = adjectives[rando];
+        rando = (int) (Math.random()*nounCount);
+        noun = nouns[rando];
+        rando = (int) (Math.random()*nameCount);
+        name = names[rando];
+        String genName =
+                "You shall now and forever be known as: "+ name + " the " + adj + "-" + noun;
+        System.out.println(genName);
+       // }
+        return name + " the " + adj + "-" + noun;
+    };
+
 }
 
 

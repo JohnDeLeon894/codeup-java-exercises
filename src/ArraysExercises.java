@@ -26,22 +26,23 @@ greater than the passed array, with the passed person object at the end of the a
 //        }
 
         Person[] people;
-        people = new Person[3];
+        int num = 10;
+        people = new Person[num];
 
-        for (int i=0; i<3 ; i++) {
-            String maName = "Person-" + i ;
+        for (int i=0; i<num ; i++) {
+            String maName = ServerNameGenerator.nameGenerator(); ;
             Person person = new Person(maName);
             people[i]=person;
         }
-        for (Person p: people){
-            String name = sc.getString();
-            p.setName(name);
-            p.sayHello();
-        }
+//        for (Person p: people){
+//            String name = sc.getString();
+//            p.setName(name);
+//            p.sayHello();
+//        }
         printArray(people);
-        people = addPerson(people, "Muhamet");
+        people = addPerson(people, ServerNameGenerator.nameGenerator());
         printArray(people);
-        people = addPerson(people, "Angelique");
+        people = addPerson(people, ServerNameGenerator.nameGenerator());
 
 
     }
@@ -56,9 +57,18 @@ greater than the passed array, with the passed person object at the end of the a
     }
 
     private static void printArray(Person[] arr){
+
+        System.out.println("********************************");
+        System.out.println("This array includes: " );
+
+
         for (Person p: arr){
-            System.out.println("This array includes " + p.getName() + " :end:");
+            System.out.println( "   " + p.getName() );
+
         }
+
+        System.out.println("the end");
+        System.out.println("********************************");
     }
 
 }

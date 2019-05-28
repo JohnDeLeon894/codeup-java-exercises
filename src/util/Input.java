@@ -59,20 +59,37 @@ public class Input {
         System.out.println(false);
         return false;
     }
+
+    // get int method ******************************************
+
     public int getInt(int min, int max){
 //        The getInt(int min, int max) method should keep prompting the user for input until they give an
 //        integer within the min and max. The getDouble method should do the same thing, but with decimal numbers.
-        System.out.printf("Please input a number between %s and %s \n", min, max);
-        int input = this.scanner.nextInt();
-        boolean valid = false;
-        if(input < min || input > max){
-            System.out.println("Input is not a valid input");
-            getInt(min, max);
-            return 0;
+
+
+        try {
+            System.out.printf("Please input a number between %s and %s \n", min, max);
+            int input = this.scanner.nextInt();
+            boolean valid = false;
+
+            if (input < min || input > max) {
+                System.out.println("Input is not a valid input");
+                getInt(min, max);
+                return 0;
+            }
+            System.out.printf("Selected valid number = %s\n", input);
+            return input;
+        }catch (Exception e ){
+            String input = this.scanner.nextLine();
+            e.printStackTrace();
+
+            //System.out.printf("Please input a number between %s and %s \n", min, max);
+             return getInt(min, max);
         }
-        System.out.printf("Selected valid number = %s\n", input);
-        return input;
     }
+
+
+
     public int getInt(){
         System.out.println("Please enter any Integer");
         int input = this.scanner.nextInt();
